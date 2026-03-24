@@ -36,8 +36,8 @@ export const USER_GROUPS: UserGroup[] = [
     linkedinUrl: "",
     slackChannel: "#aws-ug-vienna",
     accentColor: "#A66FF0",
-    logoWide: "/assets/logos/ug-vienna-logo-wide.png",
-    logoSmall: "/assets/logos/ug-vienna-small.png",
+    logoWide: `${import.meta.env.BASE_URL}assets/logos/ug-vienna-logo-wide.png`,
+    logoSmall: `${import.meta.env.BASE_URL}assets/logos/ug-vienna-small.png`,
   },
   {
     id: "aws-wug-vienna",
@@ -51,8 +51,8 @@ export const USER_GROUPS: UserGroup[] = [
     linkedinUrl: "",
     slackChannel: "#aws-wug-vienna",
     accentColor: "#A66FF0",
-    logoWide: "/assets/logos/wug-vienna-logo-wide.png",
-    logoSmall: "/assets/logos/wug-vienna-small.png",
+    logoWide: `${import.meta.env.BASE_URL}assets/logos/wug-vienna-logo-wide.png`,
+    logoSmall: `${import.meta.env.BASE_URL}assets/logos/wug-vienna-small.png`,
   },
   {
     id: "aws-ug-linz",
@@ -66,7 +66,7 @@ export const USER_GROUPS: UserGroup[] = [
     linkedinUrl: "",
     slackChannel: "#aws-ug-linz",
     accentColor: "#A66FF0",
-    logoWide: "/assets/logos/ug-linz-logo-wide.png",
-    logoSmall: "/assets/logos/ug-linz-logo-wide.png",
+    logoWide: `${import.meta.env.BASE_URL}assets/logos/ug-linz-logo-wide.png`,
+    logoSmall: `${import.meta.env.BASE_URL}assets/logos/ug-linz-logo-wide.png`,
   },
 ];

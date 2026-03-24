@@ -31,7 +31,7 @@ export function HomePage() {
             objectFit: "cover",
           }}
         >
-          <source src="/assets/hero-bg.mp4" type="video/mp4" />
+          <source src={`${import.meta.env.BASE_URL}assets/hero-bg.mp4`} type="video/mp4" />
         </video>
 
         {/* Dark overlay for opacity effect */}

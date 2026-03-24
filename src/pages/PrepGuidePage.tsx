@@ -162,7 +162,7 @@ export function PrepGuidePage() {
             <span style={{ color: accent }}>Preparation Guide</span>
           </h1>
           <img
-            src="/assets/logos/ug-vienna-logo-wide.png"
+            src={`${import.meta.env.BASE_URL}assets/logos/ug-vienna-logo-wide.png`}
             alt="AWS UG Vienna"
             style={{ height: "80px", borderRadius: "8px" }}
           />
