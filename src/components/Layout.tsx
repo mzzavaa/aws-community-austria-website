@@ -48,7 +48,7 @@ export function Layout() {
           </Link>
 
           {/* Desktop links */}
-          <div className="nav-links" style={{ display: "flex", gap: "28px", alignItems: "center" }}>
+          <div className="nav-links" style={{ gap: "28px", alignItems: "center" }}>
             {NAV_LINKS.map((item) => (
               <Link key={item.to} to={item.to} className="nav-link">
                 {item.label}
@@ -74,9 +74,6 @@ export function Layout() {
               cursor: "pointer",
               color: "var(--color-text)",
               padding: "var(--space-2)",
-              display: "none",
-              flexDirection: "column",
-              gap: "5px",
             }}
             aria-label="Toggle menu"
           >

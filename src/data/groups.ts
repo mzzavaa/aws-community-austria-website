@@ -23,6 +23,28 @@ export interface UserGroup {
   };
 }
 
+export interface CloudClub {
+  id: string;
+  name: string;
+  shortName: string;
+  city: string;
+  description: string;
+  meetupUrl: string;
+  logoWide: string | null;
+}
+
+export const CLOUD_CLUBS: CloudClub[] = [
+  {
+    id: "aws-cloud-club-stpolten",
+    name: "AWS Cloud Club St. Polten",
+    shortName: "AWS Cloud Club St. Polten",
+    city: "St. Polten",
+    description: "A student-led AWS Cloud Club at St. Polten University of Applied Sciences. Cloud Clubs are campus communities for students to explore AWS cloud technologies together.",
+    meetupUrl: "https://www.meetup.com/de-de/aws-cloud-club-at-st-polten-university-of-applied-sciences/",
+    logoWide: null,
+  },
+];
+
 export const USER_GROUPS: UserGroup[] = [
   {
     id: "aws-ug-vienna",

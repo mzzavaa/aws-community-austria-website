@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { USER_GROUPS, ORGANIZERS } from "../data/groups";
+import { USER_GROUPS, ORGANIZERS, CLOUD_CLUBS } from "../data/groups";
 import { SponsorsCarousel } from "../components/SponsorsCarousel";
 import { UPCOMING_EVENTS, type MeetupEvent } from "../data/events";
 
@@ -95,8 +95,76 @@ export function HomePage() {
         </div>
       </section>
 
+      {/* ── User Groups vs Cloud Clubs ── */}
+      <section className="section bg-surface">
+        <div className="container">
+          <div className="accent-bar" />
+          <h2 className="section-title">The AWS Community in Austria</h2>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))", gap: "var(--space-8)" }}>
+
+            {/* User Groups */}
+            <div>
+              <div style={{ display: "flex", alignItems: "center", gap: "var(--space-3)", marginBottom: "var(--space-4)" }}>
+                <div style={{ width: "40px", height: "40px", borderRadius: "var(--radius-md)", background: "var(--color-accent-dim)", border: "var(--border-accent)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                  <svg width="20" height="20" fill="none" stroke="var(--color-accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                  </svg>
+                </div>
+                <h3 style={{ fontSize: "var(--font-size-xl)", fontWeight: 700, color: "var(--color-text)" }}>AWS User Groups</h3>
+              </div>
+              <p className="text-secondary" style={{ fontSize: "var(--font-size-base)", lineHeight: 1.7, marginBottom: "var(--space-5)" }}>
+                AWS User Groups are community-run meetups open to everyone - professionals, students, and anyone curious about AWS. They are not affiliated with Amazon. Organizers are volunteers who run events out of passion for the community. Meetups typically feature two technical talks, food and drinks provided by a sponsor, and open networking.
+              </p>
+              <div style={{ display: "flex", flexDirection: "column", gap: "var(--space-3)" }}>
+                {USER_GROUPS.map(g => (
+                  <a key={g.id} href={g.meetupUrl} target="_blank" rel="noopener noreferrer"
+                    style={{ display: "flex", alignItems: "center", gap: "var(--space-3)", textDecoration: "none" }}
+                    className="footer-link">
+                    <svg width="16" height="16" fill="none" stroke="var(--color-accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" style={{ flexShrink: 0 }}>
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+                    </svg>
+                    <span style={{ color: "var(--color-text-secondary)", fontSize: "var(--font-size-base)", fontWeight: 500 }}>{g.name}</span>
+                    <span className="text-muted" style={{ fontSize: "var(--font-size-sm)" }}>{g.city}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            {/* Cloud Clubs */}
+            <div>
+              <div style={{ display: "flex", alignItems: "center", gap: "var(--space-3)", marginBottom: "var(--space-4)" }}>
+                <div style={{ width: "40px", height: "40px", borderRadius: "var(--radius-md)", background: "var(--color-accent-dim)", border: "var(--border-accent)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                  <svg width="20" height="20" fill="none" stroke="var(--color-accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                  </svg>
+                </div>
+                <h3 style={{ fontSize: "var(--font-size-xl)", fontWeight: 700, color: "var(--color-text)" }}>AWS Cloud Clubs</h3>
+              </div>
+              <p className="text-secondary" style={{ fontSize: "var(--font-size-base)", lineHeight: 1.7, marginBottom: "var(--space-5)" }}>
+                AWS Cloud Clubs are student-led communities at universities and colleges. They are part of the official AWS Educate program and focus on helping students build cloud skills through hands-on learning, workshops, and peer-to-peer knowledge sharing. Cloud Clubs are campus communities - User Groups are open to everyone in the professional world.
+              </p>
+              <div style={{ display: "flex", flexDirection: "column", gap: "var(--space-3)" }}>
+                {CLOUD_CLUBS.map(c => (
+                  <a key={c.id} href={c.meetupUrl} target="_blank" rel="noopener noreferrer"
+                    style={{ display: "flex", alignItems: "center", gap: "var(--space-3)", textDecoration: "none" }}
+                    className="footer-link">
+                    <svg width="16" height="16" fill="none" stroke="var(--color-accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" style={{ flexShrink: 0 }}>
+                      <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                    </svg>
+                    <span style={{ color: "var(--color-text-secondary)", fontSize: "var(--font-size-base)", fontWeight: 500 }}>{c.name}</span>
+                    <span className="text-muted" style={{ fontSize: "var(--font-size-sm)" }}>{c.city}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       {/* ── Upcoming Meetups ── */}
-      <section className="section bg-surface section-center">
+      <section className="section section-center">
         <div className="container">
           <div className="accent-bar" />
           <h2 className="section-title">Upcoming Meetups</h2>
@@ -141,8 +209,8 @@ export function HomePage() {
                     {/* Button */}
                     <div className="card-footer">
                       <a href={e.link} target="_blank" rel="noopener noreferrer"
-                        className={`event-btn ${e.saveTheDate && e.date ? "event-btn-filled" : "event-btn-outline"}`}>
-                        {e.saveTheDate && !e.date ? "Join our Meetup group" : e.saveTheDate ? "Coming Soon on Meetup" : "RSVP on Meetup"}
+                        className={`event-btn ${!e.date ? "event-btn-outline" : e.saveTheDate ? "event-btn-filled" : "event-btn-outline"}`}>
+                        {!e.date ? "Join our Meetup group" : e.saveTheDate ? "Coming Soon on Meetup" : "RSVP on Meetup"}
                       </a>
                     </div>
                   </div>

@@ -117,8 +117,8 @@ export function GroupPage() {
                 </div>
                 <div className="card-footer">
                   <a href={nextEvent.link} target="_blank" rel="noopener noreferrer"
-                    className={`event-btn ${nextEvent.saveTheDate ? "event-btn-filled" : "event-btn-outline"}`}>
-                    {nextEvent.saveTheDate ? "Coming Soon on Meetup" : "RSVP on Meetup"}
+                    className={`event-btn ${!nextEvent.date ? "event-btn-outline" : nextEvent.saveTheDate ? "event-btn-filled" : "event-btn-outline"}`}>
+                    {!nextEvent.date ? "Join our Meetup group" : nextEvent.saveTheDate ? "Coming Soon on Meetup" : "RSVP on Meetup"}
                   </a>
                 </div>
               </div>
