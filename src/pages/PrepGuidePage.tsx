@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { SPONSORS } from "../data/sponsors";
 
 /* ── Timeline Step Component ── */
 function TimelineStep({
@@ -279,15 +280,39 @@ export function PrepGuidePage() {
           </h2>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "var(--space-5)" }}>
             {[
-              { emoji: "🎤", title: "Technical Talks",    desc: "Two 30-minute breakout sessions on AWS topics with live Q&A" },
-              { emoji: "🍕", title: "Food & Drinks",      desc: "Catering provided by the host company - finger food, drinks, and good vibes" },
-              { emoji: "🤝", title: "Networking",         desc: "Open networking before and after talks - the best part of every meetup" },
-              { emoji: "📸", title: "Community Photos",   desc: "We capture the moments - photos shared on LinkedIn and with hosts" },
-              { emoji: "🏆", title: "AWS Credits Quiz",   desc: "Optional quiz with AWS credits as prizes - always a crowd favorite" },
-              { emoji: "📢", title: "Sponsor Spotlight",  desc: "10-minute slot for the hosting company to present themselves" },
+              {
+                icon: <svg width="28" height="28" fill="none" stroke="var(--color-accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>,
+                title: "Technical Talks",
+                desc: "Two 30-minute breakout sessions on AWS topics with live Q&A",
+              },
+              {
+                icon: <svg width="28" height="28" fill="none" stroke="var(--color-accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>,
+                title: "Food & Drinks",
+                desc: "Catering provided by the host company - finger food, drinks, and good vibes",
+              },
+              {
+                icon: <svg width="28" height="28" fill="none" stroke="var(--color-accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>,
+                title: "Networking",
+                desc: "Open networking before and after talks - the best part of every meetup",
+              },
+              {
+                icon: <svg width="28" height="28" fill="none" stroke="var(--color-accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>,
+                title: "Community Photos",
+                desc: "We capture the moments - photos shared on LinkedIn and with hosts",
+              },
+              {
+                icon: <svg width="28" height="28" fill="none" stroke="var(--color-accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>,
+                title: "AWS Credits Quiz",
+                desc: "Optional quiz with AWS credits as prizes - always a crowd favorite",
+              },
+              {
+                icon: <svg width="28" height="28" fill="none" stroke="var(--color-accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg>,
+                title: "Sponsor Spotlight",
+                desc: "10-minute slot for the hosting company to present themselves",
+              },
             ].map((item) => (
               <div key={item.title} className="card section-center" style={{ padding: "var(--space-8)", borderRadius: "var(--radius-lg)" }}>
-                <div style={{ fontSize: "36px", marginBottom: "var(--space-3)" }}>{item.emoji}</div>
+                <div style={{ marginBottom: "var(--space-4)" }}>{item.icon}</div>
                 <h3 style={{ fontSize: "var(--font-size-md)", fontWeight: 700, color: "var(--color-text)", marginBottom: "var(--space-3)" }}>{item.title}</h3>
                 <p className="text-secondary" style={{ fontSize: "var(--font-size-base)", lineHeight: 1.7 }}>{item.desc}</p>
               </div>
@@ -304,39 +329,17 @@ export function PrepGuidePage() {
           <p className="text-secondary" style={{ fontSize: "var(--font-size-md)", lineHeight: 1.7, marginBottom: "var(--space-6)" }}>
             Thanks a lot to our hosts, sponsors and speakers for making these experiences possible!
           </p>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "var(--space-3)", alignItems: "center" }}>
-            {[
-              { name: "ebcont",               logo: `${import.meta.env.BASE_URL}assets/sponsors/ebcont.png` },
-              { name: "APA Tech",             logo: `${import.meta.env.BASE_URL}assets/sponsors/apa_tech.png` },
-              { name: "Red Hat",              logo: `${import.meta.env.BASE_URL}assets/sponsors/red_hat.png` },
-              { name: "Public Cloud Group",   logo: null },
-              { name: "Warrify",             logo: null },
-              { name: "Raiffeisen Informatik", logo: `${import.meta.env.BASE_URL}assets/sponsors/raiffeisen_informatik.png` },
-              { name: "LocalStack",           logo: null },
-              { name: "Reply ML",             logo: `${import.meta.env.BASE_URL}assets/sponsors/mlreply.png` },
-              { name: "Orbit",                logo: null },
-              { name: "tecRACER",             logo: `${import.meta.env.BASE_URL}assets/sponsors/tecracer.png` },
-              { name: "PGS Software",         logo: null },
-              { name: "Auvaria",              logo: `${import.meta.env.BASE_URL}assets/sponsors/auvaria.png` },
-              { name: "Trend Micro",          logo: `${import.meta.env.BASE_URL}assets/sponsors/trend_micro.png` },
-              { name: "bytesource",           logo: null },
-            ].map(({ name, logo }) => (
-              <div key={name} className="card" style={{
-                padding: "10px var(--space-5)",
-                borderRadius: "var(--radius-md)",
-                fontSize: "var(--font-size-base)",
-                fontWeight: 500,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                minHeight: "48px",
-              }}>
-                {logo ? (
-                  <img src={logo} alt={name} style={{ height: "26px", width: "auto", maxWidth: "120px", objectFit: "contain", filter: "brightness(0) invert(1)", opacity: 0.8 }} />
-                ) : (
-                  <span className="text-secondary">{name}</span>
-                )}
-              </div>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "var(--space-4)", alignItems: "stretch" }}>
+            {SPONSORS.map(s => (
+              <a key={s.name} href={s.url} target="_blank" rel="noopener noreferrer" className="card-on-light"
+                style={{ minWidth: "140px", height: "80px", gap: "var(--space-1)" }}>
+                <img
+                  src={`${import.meta.env.BASE_URL}assets/sponsors/${s.logo}`}
+                  alt={s.name}
+                  style={{ maxHeight: "40px", maxWidth: "110px", objectFit: "contain" }}
+                />
+                <span style={{ fontSize: "var(--font-size-xs)", color: "#555", fontWeight: 500 }}>{s.name}</span>
+              </a>
             ))}
           </div>
         </div>
