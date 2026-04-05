@@ -3,6 +3,6 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
-  base: "/aws-community-austria-website/",
+  base: "/",
   server: { port: 5173 },
 });

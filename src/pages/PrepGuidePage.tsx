@@ -385,13 +385,23 @@ export function PrepGuidePage() {
         <p style={{ ...body, marginBottom: "24px" }}>
           Thanks a lot to our hosts, sponsors and speakers for making these experiences possible!
         </p>
-        <div style={{ display: "flex", flexWrap: "wrap", gap: "12px" }}>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "12px", alignItems: "center" }}>
           {[
-            "ebcont", "APA Tech", "Red Hat", "Public Cloud Group",
-            "Warrify", "Raiffeisen Informatik", "LocalStack",
-            "Reply ML", "Orbit", "tecRACER", "PGS Software",
-            "Auvaria", "Trend Micro", "bytesource",
-          ].map((name) => (
+            { name: "ebcont", logo: `${import.meta.env.BASE_URL}assets/sponsors/ebcont.png` },
+            { name: "APA Tech", logo: `${import.meta.env.BASE_URL}assets/sponsors/apa_tech.png` },
+            { name: "Red Hat", logo: `${import.meta.env.BASE_URL}assets/sponsors/red_hat.png` },
+            { name: "Public Cloud Group", logo: null },
+            { name: "Warrify", logo: null },
+            { name: "Raiffeisen Informatik", logo: `${import.meta.env.BASE_URL}assets/sponsors/raiffeisen_informatik.png` },
+            { name: "LocalStack", logo: null },
+            { name: "Reply ML", logo: `${import.meta.env.BASE_URL}assets/sponsors/mlreply.png` },
+            { name: "Orbit", logo: null },
+            { name: "tecRACER", logo: `${import.meta.env.BASE_URL}assets/sponsors/tecracer.png` },
+            { name: "PGS Software", logo: null },
+            { name: "Auvaria", logo: `${import.meta.env.BASE_URL}assets/sponsors/auvaria.png` },
+            { name: "Trend Micro", logo: `${import.meta.env.BASE_URL}assets/sponsors/trend_micro.png` },
+            { name: "bytesource", logo: null },
+          ].map(({ name, logo }) => (
             <div
               key={name}
               style={{
@@ -402,9 +412,19 @@ export function PrepGuidePage() {
                 fontWeight: 500,
                 color: "#D8D8D8",
                 border: "1px solid #2F2B52",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                minHeight: "48px",
               }}
             >
-              {name}
+              {logo ? (
+                <img
+                  src={logo}
+                  alt={name}
+                  style={{ height: "26px", width: "auto", maxWidth: "120px", objectFit: "contain", filter: "brightness(0) invert(1)", opacity: 0.8 }}
+                />
+              ) : name}
             </div>
           ))}
         </div>

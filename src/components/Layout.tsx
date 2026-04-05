@@ -17,7 +17,7 @@ export function Layout() {
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
-          padding: "0 48px",
+          padding: "0 100px",
           height: "64px",
           background: "rgba(30, 37, 56, 0.95)",
           backdropFilter: "blur(12px)",
@@ -105,7 +105,7 @@ export function Layout() {
       <footer
         style={{
           background: "#A66FF0",
-          padding: "20px 48px",
+          padding: "20px 100px",
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",

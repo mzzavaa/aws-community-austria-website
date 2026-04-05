@@ -42,7 +42,7 @@ export const USER_GROUPS: UserGroup[] = [
   {
     id: "aws-wug-vienna",
     name: "AWS Women's User Group Vienna",
-    shortName: "AWS WUG Vienna",
+    shortName: "AWS Women's UG Vienna",
     city: "Vienna",
     description:
       "The AWS Women's User Group Vienna is a welcoming space for women and allies to learn, share, and connect around AWS cloud technologies. Everyone is welcome.",
@@ -51,8 +51,8 @@ export const USER_GROUPS: UserGroup[] = [
     linkedinUrl: "",
     slackChannel: "#aws-wug-vienna",
     accentColor: "#A66FF0",
-    logoWide: `${import.meta.env.BASE_URL}assets/logos/wug-vienna-logo-wide.png`,
-    logoSmall: `${import.meta.env.BASE_URL}assets/logos/wug-vienna-small.png`,
+    logoWide: `${import.meta.env.BASE_URL}assets/logos/wug-vienna.png`,
+    logoSmall: `${import.meta.env.BASE_URL}assets/logos/wug-vienna.png`,
   },
   {
     id: "aws-ug-linz",
@@ -69,4 +69,21 @@ export const USER_GROUPS: UserGroup[] = [
     logoWide: `${import.meta.env.BASE_URL}assets/logos/ug-linz-logo-wide.png`,
     logoSmall: `${import.meta.env.BASE_URL}assets/logos/ug-linz-logo-wide.png`,
   },
+];
+
+export interface Organizer {
+  name: string;
+  role: string;
+  email: string | null;
+  linkedin: string | null;
+  photo: string | null;
+}
+
+export const ORGANIZERS: Organizer[] = [
+  { name: "Linda Mohamed",     role: "Co-Organizer", email: "linda.mohamed@icloud.com",     linkedin: "https://www.linkedin.com/in/linda-mohamed/",                 photo: "/assets/organizers/Linda.png" },
+  { name: "Dmytro Hlotenko",   role: "Co-Organizer", email: "dmytro.hlotenko@apa.at",       linkedin: "https://www.linkedin.com/in/dmytro-hlotenko-7aa348151/",    photo: "/assets/organizers/Dmytro.png" },
+  { name: "Philipp Bergsmann", role: "Co-Organizer", email: "philipp.bergsmann@redhat.com", linkedin: "https://www.linkedin.com/in/phbergsmann/",                   photo: "/assets/organizers/Philipp.png" },
+  { name: "Jakob Heinisch",    role: "Co-Organizer", email: "jakob.heinisch@pcg.io",        linkedin: "https://www.linkedin.com/in/jakob-heinisch-10028725a/",     photo: "/assets/organizers/Jakob.png" },
+  { name: "Roman Jokel",       role: "Co-Organizer", email: "romek.jokel@gmail.com",        linkedin: "https://www.linkedin.com/in/roman-jokel-99b2b8128/",        photo: "/assets/organizers/Roman.png" },
+  { name: "Matthias",          role: "Co-Organizer", email: null,                           linkedin: null,                                                        photo: "/assets/organizers/Matthias.png" },
 ];

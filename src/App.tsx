@@ -7,7 +7,7 @@ import { PrepGuidePage } from "./pages/PrepGuidePage";
 
 export function App() {
   return (
-    <BrowserRouter basename="/aws-community-austria-website">
+    <BrowserRouter basename="/">
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<HomePage />} />
